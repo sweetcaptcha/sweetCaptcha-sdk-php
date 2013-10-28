@@ -56,7 +56,7 @@ class Sweetcaptcha {
       'key'         => $this->key,
       'secret'      => $this->secret,
       'path'        => $this->path,
-      'is_mobile'   => preg_match('/mobile/i', $_SERVER['HTTP_USER_AGENT']) ? 'true' : 'false',
+      'is_mobile'   => preg_match('/iphone|ipod|blackberry|android|palm|windows\s+ce|mobile/i', $_SERVER['HTTP_USER_AGENT']) ? 'true' : 'false',
       'user_ip'     => $_SERVER['REMOTE_ADDR'],
       'user_agent'  => $_SERVER['HTTP_USER_AGENT']
     );
