@@ -3,7 +3,7 @@
 // require sweetcaptcha php sdk, don't forget to set up your credentials first
 require_once('sweetcaptcha.php');
 
-if (empty($_POST) or empty($_POST['sckey'])) {
+if (empty($_POST)) {
   // print sweetcaptcha in your form
 ?>
 
@@ -21,7 +21,7 @@ if (empty($_POST) or empty($_POST['sckey'])) {
 } else { 
 
   // looks like someone has submitted a form, let's validate it
-  if ($sweetcaptcha->check(array('sckey' => $_POST['sckey'], 'scvalue' => $_POST['scvalue'])) == "true") {
+  if (isset($_POST['sckey']) and isset($_POST['scvalue']) and $sweetcaptcha->check(array('sckey' => $_POST['sckey'], 'scvalue' => $_POST['scvalue'])) == "true") {
     // success! your form was validated
     // do what you like next ...
     echo "Success! carry on if you will";
