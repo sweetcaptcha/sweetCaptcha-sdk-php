@@ -10,7 +10,7 @@ if (empty($_POST)) {
   <form method="post">
     <p>This is your form you like SweetCapcha to protect</p>
     <p>You can set up it normally as you like <input type="text" name="name" value="" placeholder="Name" /></p>
-    <!-- implemet sweetcaptcha -->
+    <!-- implement sweetcaptcha -->
     <?php echo $sweetcaptcha->get_html() ?>
     <!-- continue with your form -->
     <input type="submit" />
